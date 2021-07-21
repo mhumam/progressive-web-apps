@@ -1,3 +1,6 @@
+import Services from 'services';
+import { MovieItemCard } from 'components/MovieCard';
+
 const NowPlaying = {
     async render() {
         return `
@@ -9,6 +12,15 @@ const NowPlaying = {
         </div>
       `;
     },
+
+    async afterRender() {
+        const movies = await Services.nowPlayingMovies();
+        const moviesContainer = document.querySelector('#movies');
+        movies.forEach((movie) => {
+            moviesContainer.innerHTML += MovieItemCard(movie);
+        });
+    },
+
 }
 
 export default NowPlaying;
