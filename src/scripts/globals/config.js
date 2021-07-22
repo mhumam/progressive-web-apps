@@ -4,6 +4,7 @@ const CONFIG = {
   BASE_IMAGE_URL: 'https://image.tmdb.org/t/p/w500/',
   DEFAULT_LANGUAGE: 'en-us',
   CACHE_NAME: 'MovieCatalogue-V1',
+  WEB_SOCKET_SERVER: 'wss://movies-feed.dicoding.dev',
 };
 
 export default CONFIG;
