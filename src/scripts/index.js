@@ -1,7 +1,8 @@
-import './assets/styles/style.css';
-import './assets/styles/responsive.css';
-import App from './pages/App';
-import SwRegister from 'utils/sw-register'; 
+import 'regenerator-runtime';
+import '../styles/style.css';
+import '../styles/responsive.css';
+import App from './views/app';
+import swRegister from './utils/sw-register';
 
 const app = new App({
   button: document.querySelector('#hamburgerButton'),
@@ -15,5 +16,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
-  SwRegister();
+  swRegister();
 });
